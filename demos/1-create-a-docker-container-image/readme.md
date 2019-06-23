@@ -70,7 +70,7 @@ hello-world                                latest              fce289e99eb9     
 
 Now let's run the container.
 
-3. In your terminal, type the following:
+4. In your terminal, type the following:
 
 ```
 $ docker run hello-world
@@ -247,6 +247,7 @@ $ docker run --name webapp -d -p 4040:80 webapp
 The port mapping syntax <host port>:<container port>. The detached mode will start the container and not block our terminal.
 
 You can now go to a browser on your machine and navigate to localhost:4040 and you should see the following web page:
+```
 
 ![localhost:4040](images/image1.png)
 
@@ -257,6 +258,7 @@ Now you have build an image and started it as a container. One last thing to do 
 $ docker ps
 ```
 You should see the webapp container:
+```
 CONTAINER ID        IMAGE               COMMAND               CREATED             STATUS              PORTS                           NAMES
 1fe991d6755b        webapp              "dotnet webapp.dll"   6 minutes ago       Up 6 minutes        443/tcp, 0.0.0.0:4040->80/tcp   webapp
 ```
