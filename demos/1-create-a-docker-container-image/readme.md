@@ -15,7 +15,9 @@ First let's verify Docker CLI is setup and its able to communicate with the serv
 ```
 $ docker version
 ```
+
 If your Docker CLI and server are configured correctly you should see output similiar to the following:
+
 ```
 Client:
  Version:           18.09.2
@@ -35,7 +37,7 @@ Server: Docker Engine - Community
   Built:            Sun Feb 10 04:13:06 2019
   OS/Arch:          linux/amd64
   Experimental:     false
-  ```
+```
   
 Now we are good to go with the demo.
  
@@ -239,15 +241,18 @@ webapp                                         latest                     05ef1d
 Now let's run it. We know know from the Dockerfile that is it going to expose port 80 and 443, so lets map it to run on our local machine to a different port to ensure there won't be a collision.
 
 3. Run the image mapping it to port 4040, give it a name and run it in detached mode.
+
 ```
 $ docker run --name webapp -d -p 4040:80 webapp
 ```
+The terminal should ouput a hash for the container that it just started.
+```
 1fe991d6755bfcdcd3815485e5c4f4317808ae4572b4c5038eadf39f62416cd5
 ```
+
 The port mapping syntax <host port>:<container port>. The detached mode will start the container and not block our terminal.
 
 You can now go to a browser on your machine and navigate to localhost:4040 and you should see the following web page:
-```
 
 ![localhost:4040](images/image1.png)
 
